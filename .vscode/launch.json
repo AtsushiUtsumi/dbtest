@@ -2,7 +2,7 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Spring Boot-DbtestApplication<dbtest>",
+            "name": "ここはぶっちゃけ何でもいい",
             "request": "launch",
             "cwd": "${workspaceFolder}",
             "mainClass": "com.example.dbtest.DbtestApplication",
