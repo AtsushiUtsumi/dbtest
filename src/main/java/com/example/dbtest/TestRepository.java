@@ -3,7 +3,7 @@ package com.example.dbtest;
 import java.sql.*;
 
 public class TestRepository {
-    public String hoge() {
+    public String select(String query) {
 
         Connection connection = null;
         Statement statement = null;
@@ -14,11 +14,10 @@ public class TestRepository {
             // データベースのPATHを指定。相対パスでも絶対パスでも行けるようです
             connection = DriverManager.getConnection("jdbc:sqlite:test.db");
             statement = connection.createStatement();
-            String sql = "select * from table1 where id=5";
             //String sql = "CREATE TABLE table1(id INTEGER PRIMARY KEY, name TEXT NOT NULL)";
 			//String sql = "INSERT INTO table1(id, name) VALUES(2,22)";
 			//String sql = "INSERT INTO table1(id, name) VALUES(5,'utsumi')";
-            ResultSet rs = statement.executeQuery(sql);
+            ResultSet rs = statement.executeQuery(query);
             while (rs.next()) {
                 return rs.getString(1) + ":" + rs.getString(2);
             }
